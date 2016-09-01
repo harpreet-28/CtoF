@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Dom and Events 7</title>
+</head>
+
+<body>
+    <input type="checkbox" class="box">Check the box.
+    <br>
+    <input type="checkbox" class="box">Check the box.
+    <br>
+    <input type="checkbox" class="box">Check the box.
+    <br>
+    <input type="checkbox" class="box">Check the box.
+    <br>
+    <input type="checkbox" class="box">Check the box.
+    <br>
+    <input type="checkbox" class="box">Check the box.
+    <br>
+    <input type="checkbox" class="box">Check the box.
+    <br>
+    <input type="checkbox" class="box">Check the box.
+    <br>
+    <input type="checkbox" class="box">Check the box.
+    <br>
+    <input type="checkbox" class="box">Check the box.
+    <br>
+    <br>
+    <input type="button" id="tick" value="Uncheck All">
+    <script>
+    var _id = function _id(id) {
+        return document['getElementById'](id)
+    }
+    var box = document['querySelectorAll']('.box');
+    var tick = _id('tick');
+
+
+    function checkAll() {
+        box.forEach(function(elem) {
+            elem.checked = true;
+        })
+    }
+
+    function uncheckAll() {
+        box.forEach(function(elem) {
+            elem.checked = false;
+        })
+    }
+    window['addEventListener']('load', checkAll, false)
+    tick['addEventListener']('click', uncheckAll, false);
+    </script>
+</body>
+
+</html>
